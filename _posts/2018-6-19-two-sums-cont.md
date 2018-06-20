@@ -82,3 +82,29 @@ private:
  */
 ```
 ## Two Sum IV - Input is a BST
+Part 4 is the same question except with the input is a BST. I used pre-order traversal to solve this i.e. check the root then check the left subtree, then the right subtree, and a set. This runtime is O(n) but doesn't perform that well compared to other algorithms given as solutions on Leetcode, beating out only 51.06% other algorithms.<br>
+```cpp
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    bool findTarget(TreeNode* root, int k) {
+        if (!root) return false;
+        unordered_set<int> mySet;
+        return targetHelper(root, k, mySet);
+    }
+    bool targetHelper(TreeNode* node, int k, unordered_set<int>& mySet) {
+        if (!node) return false;
+        if (mySet.count(k - node->val)) return true;
+        mySet.insert(node->val);
+        return targetHelper(node->left, k, mySet) || targetHelper(node->right, k, mySet);
+    }
+};
+```
