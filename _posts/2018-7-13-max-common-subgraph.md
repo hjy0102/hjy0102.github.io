@@ -1,10 +1,13 @@
 ---
 layout: post
-title: 7.46 Kleinberg & Tardos
+title: Maximum common subgraph is NP-complete
 category: cpsc420
 ---
 
-Maximum common subgraph is NP-Complete<br>
+## Set Up
+_Input_: Two graphs *G<sub>1</sub>* = (*V<sub>1</sub>*,*E<sub>1</sub>*) and *G<sub>2</sub>* = (*V<sub>2</sub>* , *E<sub>2</sub>*); a budget *b*.<br>
+_Output_: Two sets of nodes *V*<sub>1</sub>′ ⊆ *V*<sub>1</sub> and *V*<sub>2</sub>′⊆ *V*<sub>2</sub> whose deletion leaves at least b nodes in each graph, and makes the two graphs identical.
+## Proof
 (1) Proof that MCS ∈ NP  
 Certificate: two set of vertices *V*<sub>1</sub>′, *V*<sub>2</sub>′ of
 size *b* after deletions from *G*<sub>1</sub> and *G*<sub>2</sub>  
