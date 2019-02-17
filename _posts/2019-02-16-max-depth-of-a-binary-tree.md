@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Is Palindrome
+title: Maximum depth of a binary tree
 category: leetcode
 ---
 
