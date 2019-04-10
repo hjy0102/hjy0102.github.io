@@ -48,3 +48,57 @@ public:
     }
 };
 ```
+
+## Snakes and Ladders
+```cpp
+class Solution {
+public:
+    int snakesAndLadders(vector<vector<int>>& board) {
+        int N = board.size();
+        
+        if (N == 1) return 0;
+        
+        // keep track of where you've been on the board
+        unordered_map<int, int> lookup;
+        lookup[1] = 0;
+        queue<int> q({1});
+        while( !q.empty() ){
+            auto s = q.front();
+            q.pop();
+            
+            if (s == N * N) {
+                return lookup[s];
+            }
+            
+            for (int i = s +1; i < min(s+6, N*N)+1; i++){
+                int row, column;
+                int s2 = i;
+                tie(row, column) = coordinate(N, i);
+                
+                if(board[row][column] != -1){
+                    s2 = board[row][column];
+                }
+                if(!lookup.count(s2)){
+                    lookup[s2] = lookup[s]+1;
+                    q.emplace(s2);
+                }
+            }
+        }
+        
+        return -1;
+    }
+    
+private:
+    pair<int, int> coordinate(int n, int b){
+        const int a = (b - 1)/ n;
+        const int k = (b - 1) % n;
+            
+        const int r = n - 1 - a;
+        const int c = (r % 2 != n  % 2) ? k : (n - 1 - k);
+        return {r, c};
+    }
+    
+};
+```
+
+## Online Election
