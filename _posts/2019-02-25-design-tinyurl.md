@@ -3,7 +3,6 @@ layout: post
 title: Design a URL shortening service
 category: system design
 ---
-## Design a URL shortening service
 
 ### Things to discuss
 1. how to generate a unique ID for each URL

@@ -1,3 +1,9 @@
+---
+layout: post
+title: Reverse Linked List
+category: leetcode
+---
+```cpp
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -26,3 +32,4 @@ public:
         
     }
 };
+```

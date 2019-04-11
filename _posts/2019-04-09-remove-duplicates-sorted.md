@@ -3,7 +3,6 @@ layout: post
 title: Remove duplicates from a sorted array
 category: leetcode
 ---
-# Remove duplicates from a sorted array
 
 ```cpp
 class Solution {

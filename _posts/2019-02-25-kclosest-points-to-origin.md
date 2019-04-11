@@ -3,7 +3,6 @@ layout: post
 title: Feb 2019 Interview Preparation
 category: leetcode
 ---
-# K closest points to the origin
 
 ```cpp
 class Solution {

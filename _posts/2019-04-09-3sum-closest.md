@@ -3,7 +3,6 @@ layout: post
 title: 3sum closest
 category: leetcode
 ---
-# 3 sum closest
 
 ```cpp
 class Solution {

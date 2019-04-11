@@ -4,8 +4,6 @@ title: Reverse a string
 category: leetcode
 ---
 
-## Reverse a string
-
 ```java
 class Solution {
     public void reverseString(char[] s) {

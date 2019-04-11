@@ -1,10 +1,8 @@
 ---
 layout: post
-title: Symmetric tree
+title: Merge intervals
 category: leetcode
 ---
-
-# Merge intervals
 
 ```cpp
 /**
