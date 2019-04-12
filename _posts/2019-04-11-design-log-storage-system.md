@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Product of Array Except Self
+title: Design a Log Storage System
 category: leetcode
 ---
 
