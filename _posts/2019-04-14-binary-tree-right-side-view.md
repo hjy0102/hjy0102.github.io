@@ -5,6 +5,40 @@ category: leetcode
 ---
 
 ```cpp
+class Solution {
+public:
+    vector<int> rightSideView(TreeNode* root) {
+        vector<int> result;
+        if(root==NULL)  return result;
+        int ans=INT_MIN;
+        queue<TreeNode *> q;
+        q.push(root);
+        q.push(NULL);
+        result.push_back(root->val);
+        while(!q.empty()){
+            TreeNode *temp=q.front();
+            q.pop();
+            if(temp==NULL) {
+                q.push(NULL);
+                if(q.front()==NULL) break;
+                result.push_back(ans);
+            } else {
+                if(temp->left) {
+                q.push(temp->left);
+                ans=temp->left->val;
+                }
+                if(temp->right){
+                    q.push(temp->right);
+                    ans=temp->right->val;    
+                }
+            }
+        }
+        return result;
+    }
+}
+```
+
+```cpp
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
