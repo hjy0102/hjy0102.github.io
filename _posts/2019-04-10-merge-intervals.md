@@ -4,6 +4,42 @@ title: Merge intervals
 category: leetcode
 ---
 
+### using a vector of ints as a pair
+```cpp
+class Solution {
+public:
+
+    vector<vector<int>> merge(vector<vector<int>>& intervals) {
+        if (intervals.empty()){
+            return intervals;
+        }
+        
+        // sort the intervals by comparing their first values using lambda function
+        sort(intervals.begin(), intervals.end(), 
+             [](vector<int> a, vector<int> b){
+                return a.front() < b.front();    
+                });
+        
+        vector<vector<int>> ans;
+        ans.push_back(intervals[0]);
+        // intervals is now a sorted array with the smallest first value in the beginning
+        for (int i = 1; i < intervals.size(); i++ ){
+            if ( intervals[i].front() <= ans.back().back() ){
+                vector<int> temp = {
+                                        ans.back().front(), 
+                                        max(ans.back().back(), intervals[i].back())
+                                    };
+                ans.pop_back();
+                ans.push_back(temp);
+            } else {
+                ans.push_back(intervals[i]);
+            }
+        }
+        return ans;
+    }
+};
+```
+### using an Interval struct
 ```cpp
 /**
  * Definition for an interval.
