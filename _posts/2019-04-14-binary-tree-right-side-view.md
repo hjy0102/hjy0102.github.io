@@ -3,6 +3,41 @@ layout: post
 title: Binary tree right side view
 category: leetcode
 ---
+```cpp
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    vector<int> rightSideView(TreeNode* root) {
+        vector<int> res={};
+        if(root==NULL)
+            return res;
+        vector<TreeNode*> level={root};
+        while(level.size()!=0)
+        {
+            res.push_back(level[level.size()-1]->val);
+            int size=level.size();
+            for(int i=0;i<size;i++)
+            {
+                if(level[0]->left!=NULL)
+                    level.push_back(level[0]->left);
+                if(level[0]->right!=NULL)
+                    level.push_back(level[0]->right);
+                level.erase(level.begin());
+            }
+        }
+        return res;
+    }
+    
+};
+```
 
 ```cpp
 class Solution {
