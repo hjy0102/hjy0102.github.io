@@ -39,6 +39,8 @@ public:
     }
 };
 ```
+
+
 ### using an Interval struct
 ```cpp
 /**
