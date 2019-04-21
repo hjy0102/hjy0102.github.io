@@ -4,6 +4,7 @@ title: Reverse Linked List
 category: trees
 tag: leetcode
 ---
+
 ```cpp
 /**
  * Definition for singly-linked list.
