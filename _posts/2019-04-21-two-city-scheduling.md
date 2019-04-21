@@ -15,3 +15,5 @@ int twoCitySchedCost(vector<vector<int>>& cs, int res = 0) {
   return res;
 }
 ```
+Runtime: O(n log n). We sort the array then go through it once.
+Memory: O(1). We sort the array in-place.
