@@ -5,6 +5,7 @@ category: leetcode
 ---
 
 ```cpp
+
 class Solution {
 public:
     
