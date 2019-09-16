@@ -3,13 +3,11 @@ layout: post
 title: Shortest Distance From All Buildings
 category: leetcode
 ---
-
+<!-- 
 ```cpp
-class Solution 
-{
+class Solution {
 public:
-    int shortestDistance(vector<vector<int>>& grid) 
-    {
+    int shortestDistance(vector<vector<int>>& grid) {
         int m = grid.size();
         int n = grid[0].size();
         vector<vector<int>> total_dist(m, vector<int>(n, 0));
@@ -54,6 +52,7 @@ public:
     }
 };
 ```
+another solution:
 
 ```cpp
 class Solution {
@@ -117,4 +116,4 @@ public:
     return ans == INT_MAX ? -1 : ans;
     }
 };
-```
+``` -->
